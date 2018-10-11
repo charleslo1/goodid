@@ -1,5 +1,5 @@
 # goodid
-> a short ID generator, unique, Url-friendly, Non-predictable, Cluster-compatible and fast. You'll like it. 👍🚀
+> a short ID generator, unique, Url-friendly, Non-predictable, Cluster-compatible and simple & fast. You'll like it.
 
 # Install
 
@@ -13,10 +13,16 @@ npm install goodid --save
 ``` js
 import goodid from 'goodid'
 
-// generate
-goodid()   // ELlvXA6jjNua28Gm
+// standard generate
+goodid()          // ELlvXA6jjNua28Gm
 
-// model id
+// set length
+goodid(8)         // 5MX0dNtD
+
+// set length and alphabet
+goodid(8, 'abc')  // babccbab
+
+// generate model id
 Class Model {
     constructor () {
         this.id = goodid()
@@ -24,7 +30,7 @@ Class Model {
 }
 
 var obj = new Model()
-obj.id     // ELlZg7J3BYv0Slhx
+obj.id      // ELlZg7J3BYv0Slhx
 ```
 
 ![star](https://user-gold-cdn.xitu.io/2018/7/24/164ca9c0e943dcd7?w=240&h=240&f=png&s=41877)
