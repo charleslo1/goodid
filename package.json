@@ -1,6 +1,6 @@
 {
-  "name": "goodid",
-  "version": "1.0.0",
+  "name": "goodid.js",
+  "version": "1.0.1",
   "description": "a short ID generator, unique, Url-friendly, Non-predictable, Cluster-compatible and simple & fast. You'll like it.",
   "main": "dist/goodid.js",
   "scripts": {
@@ -8,9 +8,12 @@
     "lint": "gulp lint",
     "test": "mocha"
   },
+  "directories": {
+    "test": "test"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/charleslo1/goodid.git"
+    "url": "git+https://github.com/charleslo1/goodid.git"
   },
   "keywords": [
     "short",
@@ -22,7 +25,7 @@
   ],
   "author": "Charles Lo",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": { },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -46,5 +49,9 @@
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-node-resolve": "^3.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/charleslo1/goodid/issues"
+  },
+  "homepage": "https://github.com/charleslo1/goodid#readme"
 }

@@ -6,14 +6,14 @@
 # Install
 
 ``` sh
-npm install goodid --save
+npm install goodid.js --save
 
 ```
 
 # Usage
 
 ``` js
-import goodid from 'goodid'
+import goodid from 'goodid.js'
 
 // standard generate
 goodid()          // ELlvXA6jjNua28Gm
