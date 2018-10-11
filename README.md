@@ -1,6 +1,8 @@
 # goodid
 > a short ID generator, unique, Url-friendly, Non-predictable, Cluster-compatible and simple & fast. You'll like it.
 
+![goodid](./assets/goodid.png)
+
 # Install
 
 ``` sh
