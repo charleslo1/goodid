@@ -6,12 +6,13 @@
 
 // defaults
 var defaultAlphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-var defaultStartTime = new Date(2018, 0, 1).getTime();
+var defaultStartTime = new Date(2018, 9, 1).getTime();
+var defaultLength = 16;
+var defaultPrefix = '';
 
 /**
  * generate random string
  * @param  {Number} length   length
- * @param  {String} alphabet alphabet
  * @return {String}          random string
  */
 function genRandom(length, alphabet) {
@@ -26,6 +27,7 @@ function genRandom(length, alphabet) {
 
 /**
  * generate timestamp string
+ * @param  {String} alphabet alphabet
  * @return {String}          timestamp string
  */
 function genTimestamp() {
@@ -42,18 +44,51 @@ function genTimestamp() {
 /**
  * generate goodid
  * @param  {Number} length     length
+ * @param  {String} prefix     prefix
  * @param  {String} [alphabet] alphabet (optional)
  * @return {String}            goodid
  */
-function goodid(length, alphabet) {
-  length = length || 16;
+function goodid(length, prefix, alphabet) {
+  length = length || defaultLength;
+  prefix = prefix || defaultPrefix;
+  if (length <= prefix.length) throw new Error('The length parameter cannot be less than the length of the prefix.');
   var time = genTimestamp();
   if (length < 16 || alphabet) {
-    return genRandom(length, alphabet);
+    return [prefix, genRandom(length - prefix.length, alphabet)].join('');
   } else {
-    return [time, genRandom(length - time.length)].join('');
+    return [prefix, time, genRandom(length - prefix.length - time.length)].join('');
   }
 }
+
+/**
+ * default config
+ */
+goodid.defaults = {
+  length: defaultLength,
+  prefix: defaultPrefix,
+  alphabet: defaultAlphabet,
+  startTime: defaultStartTime
+
+  /**
+   * config default options
+   * @param  {Object} options options
+   */
+};goodid.config = function (options) {
+  // get options
+  options = options || goodid.defaults;
+  // set config
+  defaultLength = options.length || defaultLength;
+  defaultPrefix = options.prefix || defaultPrefix;
+  defaultAlphabet = options.alphabet || defaultAlphabet;
+  defaultStartTime = options.startTime || defaultStartTime;
+};
+
+/**
+ * goodid alias
+ */
+goodid.create = function () {
+  return goodid.apply(this, arguments);
+};
 
 return goodid;
 

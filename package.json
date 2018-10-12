@@ -1,6 +1,6 @@
 {
   "name": "goodid.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a short ID generator, unique, Url-friendly, Non-predictable, Cluster-compatible and simple & fast. You'll like it.",
   "main": "dist/goodid.js",
   "scripts": {
@@ -25,7 +25,7 @@
   ],
   "author": "Charles Lo",
   "license": "MIT",
-  "dependencies": { },
+  "dependencies": {},
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -45,6 +45,7 @@
     "gulp-eslint": "^4.0.0",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1",
+    "mocha": "^5.2.0",
     "rollup": "^0.49.3",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^8.2.1",

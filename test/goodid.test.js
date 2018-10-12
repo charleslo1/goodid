@@ -19,4 +19,11 @@ describe('goodid.js', () => {
     let id = goodid(8)
     assert.equal(8, id.length)
   })
+
+  it('goodid(24, "user-")', () => {
+    let prefix = 'user-'
+    let id = goodid(24, prefix)
+    assert.equal(24, id.length)
+    assert.equal(0, id.indexOf(prefix))
+  })
 })
