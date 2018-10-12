@@ -49,7 +49,7 @@ goodid.config({
     length: 24,
     prefix: 'user-',
     alphabet: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
-    startTime: new Date(2020, 0, 1).getTime()
+    startTime: new Date(2018, 9, 1).getTime()
 })
 
 // standard generate
