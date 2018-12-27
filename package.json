@@ -1,6 +1,6 @@
 {
   "name": "goodid.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a short ID generator, unique, Url-friendly, Non-predictable, Cluster-compatible and simple & fast. You'll like it.",
   "main": "dist/goodid.js",
   "scripts": {
